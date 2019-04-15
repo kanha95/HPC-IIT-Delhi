@@ -1,0 +1,38 @@
+Get HPC Access from here https://userm.iitd.ac.in/usermanage/hpc.html
+
+Download filezilla. Login into filezilla using:-
+Hostname = hpc.iitd.ac.in
+Username = mcs182012
+Password = ********
+
+Transfer your python and data files using filezilla drag and drop.
+
+After successful login type:-
+qsub -IP cse -l select=1:ncpus=16:ngpus=2:mem=24G -l walltime=10:00:00
+Wait till resources are allocated...
+
+Load python3.6 modules now...
+module load compiler/python/3.6.0/ucs4/gnu/447 
+module load pythonpackages/3.6.0/ucs4/gnu/447/pip/9.0.1/gnu
+module load pythonpackages/3.6.0/ucs4/gnu/447/setuptools/34.3.2/gnu
+module load pythonpackages/3.6.0/ucs4/gnu/447/wheel/0.30.0a0/gnu
+
+Download IITD Certificate from here - http://www.cc.iitd.ernet.in/certs/CCIITD-CA.crt
+Transfer to filezilla using drag and drop again.
+
+Now use the command.
+export SSL_CERT_FILE=$HOME/mycerts/CCIITD-CA.crt 
+lynx https://proxy62.iitd.ernet.in/cgi-bin/proxy.cgi
+Login using id and password.
+
+Now set the http and https proxy....
+export http_proxy=10.10.78.62:3128
+export http_proxy=10.10.78.62:3128
+
+install python3 libraries now...
+pip install scipy matplotlib scikit-learn scikit-image numpy pandas --user
+
+Now run using python command.
+python test.py
+
+
