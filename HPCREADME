@@ -58,6 +58,11 @@ export https_proxy=10.10.78.62:3128
 install python3 libraries now...
 pip install scipy matplotlib scikit-learn scikit-image numpy pandas --user
 
+Alternatively HPC has a lot of libraries. Just use the command :- module avail
+to list all of them.
+Copy the module text you want and type :- module load YOUR-MODULE-LINK
+to load the module.
+
 Now run using python command.
 python test.py
 
