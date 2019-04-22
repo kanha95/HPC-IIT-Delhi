@@ -66,3 +66,9 @@ to load the module.
 Now run using python command.
 python test.py
 
+You can use the command :- qstat -u $USER
+to see the status of your resources.
+
+You can then delete any resources using the command:- qdel JOBID
+JOBID is the number obtained after type qstat -u $USER
+
