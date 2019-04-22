@@ -17,6 +17,13 @@ module load pythonpackages/3.6.0/ucs4/gnu/447/pip/9.0.1/gnu
 module load pythonpackages/3.6.0/ucs4/gnu/447/setuptools/34.3.2/gnu
 module load pythonpackages/3.6.0/ucs4/gnu/447/wheel/0.30.0a0/gnu
 
+module load apps/pythonpackages/3.6.0/tensorflow/1.9.0/gpu
+module load apps/pythonpackages/3.6.0/keras/2.2.2/gpu
+module load apps/pythonpackages/3.6.0/pytorch/0.4.1/gpu
+module load apps/pythonpackages/3.6.0/tensorflow/1.9.0/gpu
+module load apps/pythonpackages/3.6.0/torchvision/0.2.1/gpu
+
+
 Download IITD Certificate from here - http://www.cc.iitd.ernet.in/certs/CCIITD-CA.crt
 Transfer to filezilla using drag and drop again.
 
@@ -27,12 +34,11 @@ Login using id and password.
 
 Now set the http and https proxy....
 export http_proxy=10.10.78.62:3128
-export http_proxy=10.10.78.62:3128
+export https_proxy=10.10.78.62:3128
 
 install python3 libraries now...
 pip install scipy matplotlib scikit-learn scikit-image numpy pandas --user
 
 Now run using python command.
 python test.py
-
 
