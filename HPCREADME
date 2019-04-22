@@ -7,9 +7,28 @@ Password = ********
 
 Transfer your python and data files using filezilla drag and drop.
 
+In linux command promt type:-
+ssh mcs182012@hpc.iitd.ac.in
+Then type your password and hit enter
+
 After successful login type:-
-qsub -IP cse -l select=1:ncpus=16:ngpus=2:mem=24G -l walltime=10:00:00
+
+Type:-(for first time login only)
+cp /home/apps/skeleton/.bashrc  $HOME/.bashrc 
+cp /home/apps/skeleton/.bash_profile $HOME/.bash_profile
+ln -s $SCRATCH $HOME/scratch
+
+Now the main work comes. You need to specify the resources you need.
+Type:-
+qsub -IP cse -l select=1:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
 Wait till resources are allocated...
+
+Use cd command move to your home directory. Eg:- cd ../../../home/cse/mtech/mcs182012
+You can also use scratch to operate but all the files in scratch are auto deleted.
+So you need to take care of this if you are working on scratch directory.
+
+Home directory space - 30GB
+Scratch directory space - 100GB
 
 Load python3.6 modules now...
 module load compiler/python/3.6.0/ucs4/gnu/447 
