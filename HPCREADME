@@ -72,3 +72,8 @@ to see the status of your resources.
 You can then delete any resources using the command:- qdel JOBID
 JOBID is the number obtained after type qstat -u $USER
 
+If you stopped your program in the middle of execution, then it will give CUDA OUT OF MEMORY error next time if you try to run program on gpu from the same login node.
+So you need to flush the gpu.
+Type:-
+nvidia-smi
+kill -9 PID
