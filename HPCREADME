@@ -3,6 +3,7 @@ Get HPC Access from here https://userm.iitd.ac.in/usermanage/hpc.html
 Download filezilla. Login into filezilla using:-
 Hostname = hpc.iitd.ac.in
 Username = mcs182012
+Port = 22
 Password = ********
 
 Transfer your python and data files using filezilla drag and drop.
