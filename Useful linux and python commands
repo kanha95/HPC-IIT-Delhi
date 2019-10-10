@@ -12,6 +12,8 @@ install package in any server using pip and proxy
 pip install --proxy http://username@hostname:port package_name --user
 eg. pip install --proxy http://mcs182012@10.10.78.62:3128 tensorflow-gpu --user
 
+XX is 22 for B.Tech., 62 for M.Tech. and 61 for Ph.D. Enter Port as 3128.
+
 install a package using tar file. Go to pypi.org. Search package you wish for. In download files section download the relevant tar or zip file.
 Do scp to transfer the file from local system to the server as mentioned above in scp section.
 unzip the zip file or untar the tar file using the command:-
