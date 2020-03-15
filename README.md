@@ -1,36 +1,48 @@
 # HPC-IIT-Delhi
 
-HPC Details and Use of IIT Delhi
+*HPC Details and Use of IIT Delhi*
 
-Get HPC Access from here https://userm.iitd.ac.in/usermanage/hpc.html
+Basic Things to Know about IIT Delhi HPC:
+> There are several nodes or machines in the HPC cluster. Each GPU node/machine has 2 gpus. Each CPU node/machine has 1 cpu. So if you wish to request for 4 gpus then you have to request for 2 nodes. For the CPU case, we don't request for CPU directly, instead we request for cores. Each CPU node has some number of cores. You just request for some cores. Say 1 cpu node has 12 cores and you requested for 8 cores, then 8 cores out of 12 will be allocated to you. You can see the hardware details [here](http://supercomputing.iitd.ac.in/?info) and as per your requirement request accordingly. I will be describing some more details in below examples.
 
-Download filezilla. Login into filezilla using:-
+*Getting Login Access*
+* Get HPC Access from here https://userm.iitd.ac.in/usermanage/hpc.html
+* They would mail you once everything is ready.
+* Note that i would be using Linux OS terminal for the purpose. If you are on Windows OS then you need to use putty & use command prompt accordingly
+* Open Linux Terminal/Command Prompt
+* Type:- ssh username@hpc.iitd.ac.in
+* Enter your kerberos password
+* Done you are now logged in
+* Note that username is the short version of your entry number, like mine is mcs182012
 
-Hostname = hpc.iitd.ac.in
+*For First Time Login Only*
+* These are some basic setting you need to do if you are logging into hpc for the first time
+* Note that this is only for the users who login into hpc for the first time
+```
+   cp /home/apps/skeleton/.bashrc  $HOME/.bashrc 
+   cp /home/apps/skeleton/.bash_profile $HOME/.bash_profile
+   ln -s $SCRATCH $HOME/scratch
+```
 
-Username = mcs182012
+*How to transfer files?*
+* If you wish to transfer via a graphical user interface then Download filezilla. 
+  Login into filezilla using:-
+```
+    Hostname = hpc.iitd.ac.in
+    Username = mcs182012
+    Port = 22
+    Password = your_kerberos_password
+```
+  Now Transfer your files using filezilla drag and drop.
+* The 2nd way you can transfer is using scp command. This is what i would recommend as it is bit faster and just so easy!!!
+  Just go the directory where your file/folder is stored that you wish to transfer. Right Click -> Open Terminal and then
+  ```
+    scp filename username@hpc.iitd.ac.in:~/
+    or
+    scp -R foldername username@hpc.iitd.ac.in:~/
+  ```
+  The first command would transfer a file and 2nd one would transfer a folder. I would recoomend you to convert the folder into zip file and then transfer it using the first command. It would be faster as zip files are smaller in size. You can then later unzip the file on the HPC logged in terminal by typing:- unzip filename
 
-Port = 22
-
-Password = ********
-
-Transfer your python and data files using filezilla drag and drop.
-
-In linux command promt type:-
-
-ssh mcs182012@hpc.iitd.ac.in
-
-Then type your password and hit enter
-
-After successful login type:-
-
-Type:-(for first time login only)
-
-cp /home/apps/skeleton/.bashrc  $HOME/.bashrc 
-
-cp /home/apps/skeleton/.bash_profile $HOME/.bash_profile
-
-ln -s $SCRATCH $HOME/scratch
 
 Now the main work comes. You need to specify the resources you need.
 
