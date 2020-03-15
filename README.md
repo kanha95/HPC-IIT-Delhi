@@ -5,11 +5,11 @@
 Basic Things to Know about IIT Delhi HPC:
 > There are several nodes or machines in the HPC cluster. Each GPU node/machine has 2 gpus. Each CPU node/machine has 1 cpu. So if you wish to request for 4 gpus then you have to request for 2 nodes. For the CPU case, we don't request for CPU directly, instead we request for cores. Each CPU node has some number of cores. You just request for some cores. Say 1 cpu node has 12 cores and you requested for 8 cores, then 8 cores out of 12 will be allocated to you. You can see the hardware details [here](http://supercomputing.iitd.ac.in/?info) and as per your requirement request accordingly. I will be describing some more details in below examples.
 
-*Note*
+*NOTE*
 * I assume you are familar with basic linux commands before diving into the world of HPC
 * If not then do read about cd, mkdir, rm, cp, mv, man, chmod, chown, ifconfig, ls, cat, clear commands. These are basics and i feel it would be enough.
 
-*Getting Login Access and LOGGING IN*
+*GETTING LOGIN ACCESS AND LOGGING IN*
 * Get HPC Access from here https://userm.iitd.ac.in/usermanage/hpc.html
 * They would mail you once everything is ready.
 * Note that i would be using Linux OS terminal for the purpose. If you are on Windows OS then you need to use putty & use command prompt accordingly
@@ -19,7 +19,7 @@ Basic Things to Know about IIT Delhi HPC:
 * Done you are now logged in
 * Note that username is the short version of your entry number, like mine is mcs182012
 
-*For First Time Login Only*
+*FOR FIRST TIME LOGIN ONLY*
 * These are some basic setting you need to do if you are logging into hpc for the first time
 * Note that this is only for the users who login into hpc for the first time
 ```
@@ -28,7 +28,7 @@ Basic Things to Know about IIT Delhi HPC:
    ln -s $SCRATCH $HOME/scratch
 ```
 
-*How to transfer files?*
+*HOW TO TRANSFER FILES?*
 * If you wish to transfer via a graphical user interface then Download filezilla. 
   Login into filezilla using:-
 ```
@@ -106,7 +106,7 @@ qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
 * Now you can install the packages from web using pip commands,
   E.g. ```pip install scipy matplotlib scikit-learn scikit-image numpy pandas --user```
 * ADDITIONAL NOTE:-
-  in HPC website they have mentioned a different way using ```lynx https://proxyXX.iitd.ernet.in/cgi-bin/proxy.cgi``` command but please don't use it as it breaks the seesion after 5-10 minutes and then you simply can't use the internet. If you try to log in then it will show error saying already logged in from some other system.
+  On HPC website they have mentioned a different way using ```lynx https://proxyXX.iitd.ernet.in/cgi-bin/proxy.cgi``` command but please don't use it as it breaks the seesion after 5-10 minutes and then you simply can't use the internet. If you try to log in then it will show error saying already logged in from some other system.
 
 * Cheers !!! Now run your scripts ```python3 test.py```.
 
