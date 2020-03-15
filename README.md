@@ -5,6 +5,10 @@
 Basic Things to Know about IIT Delhi HPC:
 > There are several nodes or machines in the HPC cluster. Each GPU node/machine has 2 gpus. Each CPU node/machine has 1 cpu. So if you wish to request for 4 gpus then you have to request for 2 nodes. For the CPU case, we don't request for CPU directly, instead we request for cores. Each CPU node has some number of cores. You just request for some cores. Say 1 cpu node has 12 cores and you requested for 8 cores, then 8 cores out of 12 will be allocated to you. You can see the hardware details [here](http://supercomputing.iitd.ac.in/?info) and as per your requirement request accordingly. I will be describing some more details in below examples.
 
+*Note*
+* I assume you are familar with basic linux commands before diving into the world of HPC
+* If not then do read about cd, mkdir, rm, cp, mv, man, chmod, chown, ifconfig, ls, cat, clear commands. These are basics and i feel it would be enough.
+
 *Getting Login Access*
 * Get HPC Access from here https://userm.iitd.ac.in/usermanage/hpc.html
 * They would mail you once everything is ready.
@@ -42,25 +46,29 @@ Basic Things to Know about IIT Delhi HPC:
     scp -R foldername username@hpc.iitd.ac.in:~/
   ```
   The first command would transfer a file and 2nd one would transfer a folder. I would recoomend you to convert the folder into zip file and then transfer it using the first command. It would be faster as zip files are smaller in size. You can then later unzip the file on the HPC logged in terminal by typing:- unzip filename
+* Now on the HPC logged in terminal type:- ```ls``` to check if the files are correctly transfered or not. 
+
+*Now the main work comes. You need to specify the resources you need*
+
+* There are 2 ways you can do so. One is interactive and the other is non-interactive mode.
+* In the interactive mode you will visualise the entire process and in non-interactive mode you would submit the job and task to be done and it would be done automatically and a mail would be sent to you that the task is completed.
+* If your code is ready then better go for non-interactive mode. If you want to make changes in the code then interactive mode is the only option you have.
+* For Interactive Mode, On HPC logged In terminal type:-
+```
+qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
+```
+  Wait till resources are allocated...
+  In the above query I refers to 'Interactive mode', P refers to Project. So the above query means "We are requesting 2 nodes with 8 cpu cores each, 1 gpu each, 24GB RAM each for a total time of 6 Hours. 
+  Note that you need to specify your branch or project name after -P like ee or cc or any other.
+* Once the resources are allocated,
+  Use cd command move to your home directory.
+  ```
+     cd ../../../home/cse/mtech/mcs182012
+  ```
+  You need to modify your branch name, degree and username accordingly in the above command.
+  Now we are in the home directory. Home directory space is 30GB. Type:- ```ls``` command and you can see a directory name scratch. Type:- ```cd scratch``` to go into the sctrach. Scratch directory space is 200GB. You can operate from Home or Scratch directory. But note that files and folders inside scratch are auto deleted after some time. So you need to move them into home directory if you wish to save something.
 
 
-Now the main work comes. You need to specify the resources you need.
-
-Type:-
-
-qsub -IP cse -l select=1:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
-
-Wait till resources are allocated...
-
-Use cd command move to your home directory. Eg:- cd ../../../home/cse/mtech/mcs182012
-
-You can also use scratch to operate but all the files in scratch are auto deleted.
-
-So you need to take care of this if you are working on scratch directory.
-
-Home directory space - 30GB
-
-Scratch directory space - 100GB
 
 Load python3.6 modules now...
 
