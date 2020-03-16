@@ -5,11 +5,11 @@
 Basic Things to Know about IIT Delhi HPC:
 > There are several nodes or machines in the HPC cluster. Each GPU node/machine has 2 gpus. Each CPU node/machine has 1 cpu. So if you wish to request for 4 gpus then you have to request for 2 nodes. For the CPU case, we don't request for CPU directly, instead we request for cores. Each CPU node has some number of cores. You just request for some cores. Say 1 cpu node has 12 cores and you requested for 8 cores, then 8 cores out of 12 will be allocated to you. You can see the hardware details [here](http://supercomputing.iitd.ac.in/?info) and as per your requirement request accordingly. I will be describing some more details in below examples.
 
-*NOTE*
+## NOTE
 * I assume you are familar with basic linux commands before diving into the world of HPC
 * If not then do read about cd, mkdir, rm, cp, mv, man, chmod, chown, ifconfig, ls, cat, clear commands. These are basics and i feel it would be enough.
 
-*GETTING LOGIN ACCESS AND LOGGING IN*
+## GETTING LOGIN ACCESS AND LOGGING IN
 * Get HPC Access from here https://userm.iitd.ac.in/usermanage/hpc.html
 * They would mail you once everything is ready.
 * Note that i would be using Linux OS terminal for the purpose. If you are on Windows OS then you need to use putty & use command prompt accordingly
@@ -19,7 +19,7 @@ Basic Things to Know about IIT Delhi HPC:
 * Done you are now logged in
 * Note that username is the short version of your entry number, like mine is mcs182012
 
-*FOR FIRST TIME LOGIN ONLY*
+***FOR FIRST TIME LOGIN ONLY***
 * These are some basic setting you need to do if you are logging into hpc for the first time
 * Note that this is only for the users who login into hpc for the first time
 ```
@@ -28,7 +28,7 @@ Basic Things to Know about IIT Delhi HPC:
    ln -s $SCRATCH $HOME/scratch
 ```
 
-*HOW TO TRANSFER FILES?*
+## HOW TO TRANSFER FILES?
 * If you wish to transfer via a graphical user interface then Download filezilla. 
   Login into filezilla using:-
 ```
@@ -69,7 +69,7 @@ qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
   Now we are in the home directory. Home directory space is 30GB. Type:- ```ls``` command and you can see a directory name scratch. Type:- ```cd scratch``` to go into the scratch. Scratch directory space is 200GB. You can operate from Home or Scratch directory. But note that files and folders inside scratch are auto deleted after some time. So you need to move them into home directory if you wish to save something.
 * **For non-interactive mode**, I have provided a file with name ```pbsbatch.sh```, you just need to open the file using the command ```vi pbsbatch.sh```, then start editing by typing ```i```, then specifiy your requirements accordingly, then save it using the command ```ESCAPEKEY:wq```. Note that you need to press the ESCAPEKEY and then release it followed by :wq. Now type ```qsub pbsbatch.sh```, if everything you have specified is correct your job will be submitted and once done you will get a mail regarding the same. I have commented the ```pbsbatch.sh``` file to help you understand the things inside the file. They are mostly similar to the commands that we would be working in interactive mode.
 
-*LOADING MODULES*
+## LOADING MODULES
 
 * You can see the list of all preloaded modules by typing on HPC logged in terminal ```module avail```
 * Now select the package you wish to use and load them typing ```module load packagename```
@@ -110,10 +110,12 @@ qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
 
 * Cheers !!! Now run your scripts ```python3 test.py```.
 
-*SOME OTHER USEFUL COMMANDS*
+## SOME OTHER USEFUL COMMANDS
 * To see the status of your allocated resources, You can use the command ```qstat -u $USER```
 * You can then delete any allocated resources using the command ```qdel JOBID```
   JOBID is the number obtained after typing ```qstat -u $USER```. It is a 5 digit number generally before the dot character.
 * If you ever stop your running gpu utilising program in the middle of execution, then it will give CUDA OUT OF MEMORY error next time if you try to run program on gpu from the same login node.
   So you need to flush the gpu. Type:- ```nvidia-smi```
   Note down the PID. Then kill the PID by typing ```kill -9 PID```
+* You can load anaconda typing ```module load apps/anaconda/3``` and then install the packages using ```conda install packagename``` command. You need to given internet access to the login node as i mentioned above.
+* You can see the nodes allocated by typing ```cat $PBS_NODEFILE``` after the allocation is done
