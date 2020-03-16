@@ -86,7 +86,8 @@ qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
   module load apps/pythonpackages/3.6.0/torchvision/0.2.1/gpu
 ```
 
-*INSTALLING PACKAGES FROM THE INTERNET OR WEB*
+## INSTALLING PACKAGES FROM THE INTERNET OR WEB
+
 * Download IITD Certificate from here - http://www.cc.iitd.ernet.in/certs/CCIITD-CA.crt
 * Transfer the file using the techniques mentioned above
 * Also transfer the 2 files i have provided ```proxyAuth.txt``` and ```iitdproxy.py```.
