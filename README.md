@@ -122,7 +122,8 @@ qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
 * If you wish to use HPC from outside IITD Campus then you need to write a mail to *updaters@cse.iitd.ac.in* with subject *Getting SRI access*. Mention the reason you want to use HPC outside IITD, CC your faculty incharge. Once approved you can use the following commands to login to HPC:-
 ```
    ssh username@sri.cse.iitd.ac.in
-   EnterPassword
+   EnterKerberosPassword
    ssh username@hpc.iitd.ac.in
-   EnterPassword
+   EnterKerberosPassword
  ```
+ * For any help regarding HPC, mail to *hpchelp@iitd.ac.in*
