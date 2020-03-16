@@ -43,7 +43,7 @@ Basic Things to Know about IIT Delhi HPC:
   ```
     scp filename username@hpc.iitd.ac.in:~/
     or
-    scp -R foldername username@hpc.iitd.ac.in:~/
+    scp -r foldername username@hpc.iitd.ac.in:~/
   ```
   The first command would transfer a file and 2nd one would transfer a folder. I would recoomend you to convert the folder into zip file and then transfer it using the first command. It would be faster as zip files are smaller in size. You can then later unzip the file on the HPC logged in terminal by typing:- unzip filename
 * Now on the HPC logged in terminal type:- ```ls``` to check if the files are correctly transfered or not. 
