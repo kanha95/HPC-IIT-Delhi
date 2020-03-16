@@ -111,7 +111,7 @@ qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
 
 * Cheers !!! Now run your scripts ```python3 test.py```.
 
-# Install a package using tar file. 
+# INSTALL A PACKAGE USING TAR/ZIP FILE
 
 * Go to pypi.org. Search package you wish for.
 * In download files section download the relevant tar or zip file.
