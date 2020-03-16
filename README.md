@@ -111,6 +111,39 @@ qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
 
 * Cheers !!! Now run your scripts ```python3 test.py```.
 
+# Install a package using tar file. 
+
+* Go to pypi.org. Search package you wish for.
+* In download files section download the relevant tar or zip file.
+* Do scp to transfer the file from local system to the server as mentioned above in scp section.
+* unzip the zip file or untar the tar file using the command:-
+```
+  unzip filename
+  or
+  tar -xzvf filename
+  cd foldername
+  python3 -m setup.py install --user
+```
+
+# If you are using ANACONDA on hpc then you need to be careful while creating a virtual environment.
+
+Here are the commands.
+```
+module load apps/anaconda/3
+conda config --set auto_activate_base false
+conda init
+```
+
+Then close the terminal and log in again.
+```
+module load apps/anaconda/3
+conda create --prefix=/home/cse/mtech/mcs182012/myenv
+module unload apps/anaconda/3
+conda config --set env_prompt '({name}) '
+conda activate /home/cse/mtech/mcs182012/myenv
+```
+Now you can install your packages using ```conda install pkgname``` command and it won't conflict with the existing packages.
+
 ## SOME OTHER USEFUL COMMANDS
 * To see the status of your allocated resources, You can use the command ```qstat -u $USER```
 * You can then delete any allocated resources using the command ```qdel JOBID```
