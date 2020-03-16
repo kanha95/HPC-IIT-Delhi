@@ -7,7 +7,7 @@ Basic Things to Know about IIT Delhi HPC:
 
 ## NOTE
 * I assume you are familar with basic linux commands before diving into the world of HPC
-* If not then do read about cd, mkdir, rm, cp, mv, man, chmod, chown, ifconfig, ls, cat, clear commands. These are basics and i feel it would be enough.
+* If not then do read about cd, mkdir, rm, cp, mv, man, vim, vi, chmod, chown, ifconfig, ls, cat, clear commands. These are basics and i feel it would be enough.
 
 ## GETTING LOGIN ACCESS AND LOGGING IN
 * Get HPC Access from here https://userm.iitd.ac.in/usermanage/hpc.html
