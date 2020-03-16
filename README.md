@@ -119,3 +119,9 @@ qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
   Note down the PID. Then kill the PID by typing ```kill -9 PID```
 * You can load anaconda typing ```module load apps/anaconda/3``` and then install the packages using ```conda install packagename``` command. You need to given internet access to the login node as i mentioned above.
 * You can see the nodes allocated by typing ```cat $PBS_NODEFILE``` after the allocation is done
+* If you wish to use HPC from outside IITD Campus then you need to write a mail to *updaters@cse.iitd.ac.in* with subject *Getting SRI access*. Mention the reason you want to use HPC outside IITD, CC your faculty incharge. Once approved you can use the following commands to login to HPC:-
+```ssh username@sri.cse.iitd.ac.in
+   EnterPassword
+   ssh username@hpc.iitd.ac.in
+   EnterPassword
+ ```
