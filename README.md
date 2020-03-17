@@ -146,6 +146,20 @@ conda activate /home/cse/mtech/mcs182012/myenv
 ```
 Now you can install your packages using ```conda install pkgname``` command and it won't conflict with the existing packages.
 
+## PROJECT FUNDS CHECK
+* Note that this section is only for people who have funded projects on HPC
+* Funded projects help you gain access to high priority queue where getting resources is easier and quicker
+  You can then just use ```-q high``` to specifiy that you are requesting for high priority queue instead of the regular standard queue like this ```qsub -q high pbsbatch.sh``` or ```qsub -I -P cse -q high -l select=2:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00```
+* You can fund your projects too, just mail to *hpchelp@iitd.ac.in* for all the details
+* You can check the left balance of your funds by typing these commands:-
+  ```
+    amgr login
+    amgr ls project
+    EnterKerberosPassword
+    amgr checkbalance project -n cse
+    amgr checkbalance project -n ml.cse -p global
+   ```
+   
 ## SOME OTHER USEFUL COMMANDS
 * To see the status of your allocated resources, You can use the command ```qstat -u $USER```
 * You can then delete any allocated resources using the command ```qdel JOBID```
@@ -163,4 +177,5 @@ Now you can install your packages using ```conda install pkgname``` command and 
    ssh username@hpc.iitd.ac.in
    EnterKerberosPassword
  ```
+ * You can also get access to hpc from outside campus using VPN services of CSC. Please visit [this](http://www.cc.iitd.ernet.in/CSC/index.php?option=com_content&view=article&id=104&Itemid=135) website for more details on it.
  * For any help regarding HPC, mail to *hpchelp@iitd.ac.in*
