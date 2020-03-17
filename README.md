@@ -113,7 +113,7 @@ qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
 
 * Cheers !!! Now run your scripts ```python3 test.py```.
 
-# INSTALL A PACKAGE USING TAR/ZIP FILE
+## INSTALL A PACKAGE USING TAR/ZIP FILE
 
 * Go to pypi.org. Search package you wish for.
 * In download files section download the relevant tar or zip file.
@@ -127,7 +127,7 @@ qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
   python3 -m setup.py install --user
 ```
 
-# If you are using ANACONDA on hpc then you need to be careful while creating a virtual environment.
+## If you are using ANACONDA on hpc then you need to be careful while creating a virtual environment.
 
 Here are the commands.
 ```
