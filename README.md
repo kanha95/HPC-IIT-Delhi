@@ -82,7 +82,7 @@ qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G:centos=skylake -l walltime=6:
    lfs quota -hu $USER /home
    lfs quota -hu $USER /scratch
 ```
-You can check the disk quota using the above 2 command. Normally for home it is 30GB and for scratch it is 200TB. You can mail to *hpchelp@iitd.ac.in* to increase home disk quota if you need more space.
+You can check the disk quota using the above 2 commands. Normally for home it is 30GB and for scratch it is 200TB. You can mail to *hpchelp@iitd.ac.in* to increase home disk quota if you need more space.
 
 ## LOADING MODULES
 
