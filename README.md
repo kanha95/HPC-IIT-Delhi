@@ -58,10 +58,17 @@ Basic Things to Know about IIT Delhi HPC:
 * **For Interactive Mode**, On HPC logged In terminal type:-
 ```
 qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G -l walltime=6:00:00
+or
+qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G:centos=skylake -l walltime=6:00:00
 ```
   Wait till resources are allocated...
-  In the above query I refers to 'Interactive mode', P refers to Project. So the above query means "We are requesting 2 nodes with 8 cpu cores each, 1 gpu each, 24GB RAM each for a total time of 6 Hours. 
-  Note that you need to specify your branch or project name after -P like ee or cc or any other.
+   In the above first query, I refers to 'Interactive mode', P refers to Project. So the above query means "We are requesting 2 nodes with 8 cpu cores each, 1 gpu each, 24GB RAM each, haswell phase 1 nodes are to be selected, for a total time of 6 Hours.
+  
+  In the above second query, I refers to 'Interactive mode', P refers to Project. So the above query means "We are requesting 2 nodes with 8 cpu cores each, 1 gpu each, 24GB RAM each, skylake phase 2 nodes are to be selected, for a total time of 6 Hours. 
+  
+  Note that phase 2 nodes are powerful and faster ones. Generally they don't give these nodes to all. You need to pass advance HPC test conducted at college to avail those. But sometimes they are available to use without giving any test. You can see the Phase 1 and 2 node details [here](http://supercomputing.iitd.ac.in/?info)
+  
+  Also Note that you need to specify your branch or project name after -P like ee or cc or any other.
 * Once the resources are allocated,
   Use cd command move to your home directory.
   ```
