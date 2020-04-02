@@ -124,8 +124,6 @@ You can check the disk quota using the above 2 commands. Normally for home it is
 * ADDITIONAL NOTE:-
   On HPC website they have mentioned a different way using ```lynx https://proxyXX.iitd.ernet.in/cgi-bin/proxy.cgi``` command but please don't use it as it breaks the seesion after 5-10 minutes and then you simply can't use the internet. If you try to log in then it will show error saying already logged in from some other system.
 
-* Cheers !!! Now run your scripts ```python3 test.py```.
-
 ## INSTALL A PACKAGE USING TAR/ZIP FILE
 
 * Go to pypi.org. Search package you wish for.
@@ -153,10 +151,10 @@ Then close the terminal and log in again. Do check that your current terminal ha
 
 ```
 module load apps/anaconda/3
-conda create --prefix=/home/cse/mtech/mcs182012/myenv
+conda create --prefix=~/myenv
 module unload apps/anaconda/3
 conda config --set env_prompt '({name}) '
-conda activate /home/cse/mtech/mcs182012/myenv
+conda activate ~/myenv or source activate ~/myenv
 ```
 Now you can install your packages using ```conda install pkgname``` command and it won't conflict with the existing packages.
 
