@@ -47,7 +47,7 @@ Basic Things to Know about IIT Delhi HPC:
     or
     scp -r foldername username@hpc.iitd.ac.in:~/
   ```
-  The first command would transfer a file and 2nd one would transfer a folder. I would recoomend you to convert the folder into zip file and then transfer it using the first command. It would be faster as zip files are smaller in size. You can then later unzip the file on the HPC logged in terminal by typing:- unzip filename
+  The first command would transfer a file and 2nd one would transfer a folder. I would recommend you to convert the folder into zip file and then transfer it using the first command. It would be faster as zip files are smaller in size. You can then later unzip the file on the HPC logged in terminal by typing:- unzip filename
 * Now on the HPC logged in terminal type:- ```ls``` to check if the files are correctly transfered or not. 
 
 *Now the main work comes. You need to specify the resources you need*
@@ -149,7 +149,8 @@ conda config --set auto_activate_base false
 conda init
 ```
 
-Then close the terminal and log in again.
+Then close the terminal and log in again. Do check that your current terminal has internet connectivity. Do read the section INSTALLING PACKAGES FROM THE INTERNET OR WEB above to give connectivity to this terminal. Else you will get https error.
+
 ```
 module load apps/anaconda/3
 conda create --prefix=/home/cse/mtech/mcs182012/myenv
