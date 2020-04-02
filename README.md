@@ -51,7 +51,8 @@ Basic Things to Know about IIT Delhi HPC:
 * Now on the HPC logged in terminal type:- ```ls``` to check if the files are correctly transfered or not. 
 
 *Now the main work comes. You need to specify the resources you need*
-**Note that you can run your python files or scripts only after resources are alloted to you. Don't run those files on the login terminal. It will give you warning mail from HPC and terminate your HPC access **
+
+### Note that you can run your python files or scripts only after resources are alloted to you. Don't run those files on the login terminal. It will give you warning mail from HPC and terminate your HPC access
 
 * There are 2 ways you can do so. One is interactive and the other is non-interactive mode.
 * In the interactive mode you will visualise the entire process and in non-interactive mode you would submit the job and task to be done and it would be done automatically and a mail would be sent to you that the task is completed.
