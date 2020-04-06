@@ -103,9 +103,11 @@ You can check the disk quota using the above 2 commands. Normally for home it is
   module load apps/pythonpackages/3.6.0/tensorflow/1.9.0/gpu
   module load apps/pythonpackages/3.6.0/torchvision/0.2.1/gpu
 ```
+* Note that you can load modules in home terminal. But it won't be used once the resources are alloted to you. So after resources are alloted to you, you need to again load the modules you wish to use. If you don't wish to use these default modules and wish to install your own packages then better use conda environment as i have listed below. Using python venv has some issues, so i would suggest better to go for conda environment. IITD HPC supports conda environment well.
 
 ## INSTALLING PACKAGES FROM THE INTERNET OR WEB
 
+* This procedure will give internet connectivity to your current terminal. You can use the below techniques either in home terminal or after request alloted terminal.
 * Download IITD Certificate from here - http://www.cc.iitd.ernet.in/certs/CCIITD-CA.crt
 * Transfer the file using the techniques mentioned above
 * Also transfer the 2 files i have provided ```proxyAuth.txt``` and ```iitdproxy.py```.
