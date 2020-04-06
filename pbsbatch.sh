@@ -26,6 +26,9 @@ module () {
         eval `/usr/share/Modules/$MODULE_VERSION/bin/modulecmd bash $*`
 }
 
+module load apps/anaconda/3
+source activate ~/myenv
+module unload apps/anaconda/3
 
 module load compiler/python/3.6.0/ucs4/gnu/447
 module load pythonpackages/3.6.0/ucs4/gnu/447/pip/9.0.1/gnu
