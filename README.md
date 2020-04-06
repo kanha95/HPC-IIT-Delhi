@@ -9,6 +9,13 @@ Basic Things to Know about IIT Delhi HPC:
 * I assume you are familar with basic linux commands before diving into the world of HPC
 * If not then do read about cd, mkdir, rm, cp, mv, man, vim, vi, chmod, chown, ifconfig, ls, cat, clear commands. These are basics and i feel it would be enough.
 
+## TERMINAL DETAILS
+* The terminal that you get first when you login is your home terminal
+* The terminal that you get after resources have been alloted is your resource alloted terminal
+* All the files and folders in home terminal are accessible by the resource alloted terminal
+* The environement of home terminal is not same as resource alloted terminal, you need to specify the environement exclusively to use for resource alloted terminal. You can specify the environment by using conda as described below or use the default given modules of HPC by loading them.
+* By environment, i mean the packages, libraries and settings to use during execution of your scripts
+
 ## GETTING LOGIN ACCESS AND LOGGING IN
 * Get HPC Access from here https://userm.iitd.ac.in/usermanage/hpc.html
 * They would mail you once everything is ready.
