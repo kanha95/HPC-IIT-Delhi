@@ -76,6 +76,7 @@ qsub -I -P cse -l select=2:ncpus=8:ngpus=1:mem=24G:centos=skylake -l walltime=6:
   ```
      cd ~/
   ```
+  At this point you should be getting a display like ``` username@login01 ```.
   Now we are in the home directory. Home directory space is 30GB. Type:- ```ls``` command and you can see a directory name scratch. Type:- ```cd scratch``` to go into the scratch. Scratch directory space is 200TB. You can operate from Home or Scratch directory. But note that files and folders inside scratch are auto deleted after some time. So you need to move them into home directory if you wish to save something.
 * **For non-interactive mode**, I have provided a file with name ```pbsbatch.sh```, transfer it using the above mentioned techniques, then you just need to open the file using the command ```vi pbsbatch.sh```, then start editing by typing ```i```, then specifiy your requirements accordingly, then save it using the command ```ESCAPEKEY:wq```. Note that you need to press the ESCAPEKEY and then release it followed by :wq. Now type ```qsub pbsbatch.sh```, if everything you have specified is correct your job will be submitted and once done you will get a mail regarding the same. 2 files will also be created in the home directory, use ```vi filename``` to open those files. One of them is the error log file and the other is output log file. I have commented the ```pbsbatch.sh``` file to help you understand the things inside the file. They are mostly similar to the commands that we would be working in interactive mode.
 
@@ -142,14 +143,14 @@ You can check the disk quota using the above 2 commands. Normally for home it is
 
 ## If you are using ANACONDA on hpc then you need to be careful while creating a virtual environment.
 
-Here are the commands.
+Here are the commands. Use the below commands in home terminal without requesting for any resoruces.
 ```
 module load apps/anaconda/3
 conda config --set auto_activate_base false
 conda init
 ```
 
-Then close the terminal and log in again. Do check that your current terminal has internet connectivity. Do read the section INSTALLING PACKAGES FROM THE INTERNET OR WEB above to give connectivity to this terminal. Else you will get https error.
+Then **close all the terminals** and log in again. Now provide internet connectivity to current terminal. Do read the section INSTALLING PACKAGES FROM THE INTERNET OR WEB above to give connectivity to this terminal. Else you will get https error. Use the below commands in home terminal without requesting for any resoruces.
 
 ```
 module load apps/anaconda/3
@@ -158,7 +159,19 @@ module unload apps/anaconda/3
 conda config --set env_prompt '({name}) '
 conda activate ~/myenv or source activate ~/myenv
 ```
-Now you can install your packages using ```conda install pkgname``` command and it won't conflict with the existing packages.
+Now you can install your packages using ```conda install pkgname``` command and it won't conflict with the existing packages. After installing all the packages when your environment is ready deactivate the environment using ```conda deactivate ~/myenv```. 
+
+### NOTE:- Use ```source activate ~/myenv``` if you are using non-interactive mode.
+
+You can create the environment in the home login terminal without requesting for any resources. Then once the request is made and resources are allocated, you just need to activate the environment, i.e.
+
+```
+    module load apps/anaconda/3
+    source activate ~/myenv
+    module unload apps/anaconda/3
+```
+
+We are unloading the module anaconda3 because we want out environment packages to be used instead of base conda packages. Now all the packages that you have installed in your environment will be used.
 
 ## PROJECT FUNDS CHECK
 * Note that this section is only for people who have funded projects on HPC
