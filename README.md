@@ -215,4 +215,8 @@ We are unloading the module anaconda3 because we want out environment packages t
    EnterKerberosPassword
  ```
  * You can also get access to hpc from outside campus using VPN services of CSC. Please visit [this](http://www.cc.iitd.ernet.in/CSC/index.php?option=com_content&view=article&id=104&Itemid=135) website for more details on it. Once you get the VPN access, On WINDOWS download and install OPENVPN. Then download all the certificates and all provided to you. They will mail you all the certificates and files. Transfer it inside /etc/openvpn/client folder. Click on connect. It will be connected. Now use putty software on WINDOWS to ssh into HPC. The above steps works well on WINDOWS. Refer this [link](https://github.com/kanha95/VPN-IIT-Delhi) for VPN setup on linux.
+ 
+ * VPN connections can be sensitive to incorrect/low MTU set within your network, or on networks between you and your server. It is important that the correct MTU is set, to ensure fast and error-free VPN performance. 
+ Please visit [this](https://www.sonassi.com/help/troubleshooting/setting-correct-mtu-for-openvpn)
+ 
  * For any help regarding HPC, mail to *hpchelp@iitd.ac.in*
