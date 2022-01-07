@@ -126,9 +126,9 @@ You can check the disk quota using the above 2 commands. Normally for home it is
 * Open a New Terminal, login into hpc using the ssh command as mentioned in the *Getting Login Access and LOGGING IN* section.
 * Now we need to export the http, ftp and https proxy, Run the command
   ```
-    export http_proxy=10.10.78.XX:3128
+    export http_proxy=http://10.10.78.XX:3128
     export ftp_proxy=10.10.78.XX:3128
-    export https_proxy=10.10.78.XX:3128
+    export https_proxy=http://10.10.78.XX:3128
   ```
   Note that ```XX``` is 22 for B.Tech, 62 for M.Tech and 61 for Ph.D.
 * Now you can install the packages from web using pip commands,
